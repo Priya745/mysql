@@ -1,0 +1,99 @@
+SELECT * FROM studentdb.student;
+use studentdb;
+create table marks(
+  roll int unique,
+  name varchar(30) not null,
+  age int,
+  marks int
+);
+
+insert into marks values (1, 'Aman', 20, 56);
+select * from marks;
+insert into marks values (2, 'Ram', 56, 65);
+insert into marks values (2, 'Sita', 45, 65);
+
+create table marks2(
+  roll int primary key,
+  name varchar(30) not null,
+  age int,
+  marks int
+);
+
+insert into marks2 values(1, 'Ram', 45, 54);
+select * from marks2;
+
+create table marks3(
+   roll int primary key,
+  name varchar(30) not null,
+  age int check(age>=18),
+  marks int check(marks<=100)
+);
+insert into marks3 values(1, 'sita', 13, 90);
+
+create table marks4(
+   roll int primary key,
+  name varchar(30) not null,
+  age int check(age>=18),
+  marks int check(marks<=100),
+  batch varchar(5) default 'A'
+);
+
+-- Selection restricting no. of rows
+select * 
+from student
+where batch = 'A'; 
+
+-- projection Restricting no. of columns.. not restricting no. of rows
+select roll, name from student;
+
+select name, batch from student where batch='A';
+
+select * from student;      -- projection
+
+select * from student where marks>=80;   -- selection
+
+select name, marks from student where marks>=80;    
+
+
+//ALIAS
+SELECT * FROM studentdb.student;
+
+use studentdb;
+
+select Name from student;
+select Roll as ID from student;            -- alias for column
+select Roll as "Student ID" from student;  -- alias for column
+
+select st.Name, st.Batch from student st;        -- alias for table
+
+//ARITHMETIC OPERATORS
+SELECT * FROM company.employee;
+use company;
+insert into employee values
+(1, 'Aman', 1000);
+
+insert into employee values
+(2, 'Rina', 1500),
+(3, 'Sam', 1300),
+(4, 'Tony', 2000);
+
+select emp_name, emp_salary+10000 as "updated_salary"
+from employee;
+
+select emp_name, emp_salary-100 as 'updated_salary'
+from employee;
+
+select emp_name, emp_salary, emp_salary*12 as 'Annual salary'
+from employee;
+
+select emp_id, emp_name, emp_salary + (emp_salary*0.1) as 'incremented salary by 10%'
+from employee;
+
+select *
+from employee
+where emp_salary%3=0;
+
+//BETWEEN OPERATOR
+use company;
+select * from drives
+where package between 650000 and 750000;
