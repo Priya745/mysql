@@ -103,9 +103,31 @@ where package between 650000 and 750000;
 select * from drives where 
 designation IN ('software developer', 'data administration');              // WORKS AS OR OPERATOR(filter rows based on list of specified values)
 
+//LIKE
+select * from drives where
+designation like '%r';
 
+SELECT * FROM drives
+WHERE designation LIKE '%a'
+   OR designation LIKE '%b'
+   OR designation LIKE '%c';
+
+
+//DISTINCT
+select distinct designation from drives;
 
 
 //IS NULL        IS NOT NULL
 select * from drives where
 drive_date is not null;
+
+//LIMIT  and OFFSET OPERATOR
+
+select * from drives limit 2;                    .// DISPLAYS ONLY TOP 2 ROWS
+SELECT * FROM  drives LIMIT 1 OFFSET 1;           //OFFSET MEANS SKIP.. DISPLAYS SECOND ROW SKIPPING FIRST ROW
+SELECT * FROM drives LIMIT 1 OFFSET 3;           //DISPLAYS 2nd, 3rd, 4th rows
+
+select * from drives 
+where package>2
+limit 2;
+
