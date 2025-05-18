@@ -93,7 +93,19 @@ select *
 from employee
 where emp_salary%3=0;
 
-//BETWEEN OPERATOR
+//BETWEEN AND OPERATOR
 use company;
 select * from drives
 where package between 650000 and 750000;
+
+
+//IN OPERATOR
+select * from drives where 
+designation IN ('software developer', 'data administration');              // WORKS AS OR OPERATOR(filter rows based on list of specified values)
+
+
+
+
+//IS NULL        IS NOT NULL
+select * from drives where
+drive_date is not null;
