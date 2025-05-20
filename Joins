@@ -1,0 +1,33 @@
+use studentdb;
+
+SELECT * FROM studentdb.students;
+insert into students values
+(1, 'Amit', 84, 111),
+(2, 'Suraj', 72, 112),
+(3, 'Mohit', 91, 111),
+(4, 'Ravi', 71, 113),
+(5, 'Rohit', 65, 112),
+(6, 'Mohan', 74, 114),
+(7, 'Arjun', 68, 118),
+(8, 'Karthik', 87, 119),
+(9, 'Amar', 95, 120);
+
+SELECT * from studentdb.batch;
+insert into batch values
+(111, 'A'),
+(112, 'B'),
+(113, 'C'),
+(114, 'D'),
+(115, 'E'),
+(116, 'F');
+
+-- equi join
+select * from students, batch
+where students.batchId = batch.batchId;
+
+-- inner join   (same as equi join, only keywords are used)
+select * from students inner join batch       
+on students.batchId = batch.batchId;                     -- when conditions are checked between two diff tables use ON
+
+-- natural join  (same in both tables and dont want repetition)
+select * from students natural join batch;
