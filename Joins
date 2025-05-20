@@ -31,3 +31,14 @@ on students.batchId = batch.batchId;                     -- when conditions are 
 
 -- natural join  (same in both tables and dont want repetition)
 select * from students natural join batch;
+
+-- left join
+select * from students left outer join batch
+on students.batchId=batch.batchId;
+
+-- right join
+select * from students right join batch
+on students.batchId=batch.batchId;
+
+-- cross join                                    -- for cartesian product between two tables
+select * from students cross join batch;
