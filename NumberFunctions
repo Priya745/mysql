@@ -10,3 +10,8 @@ select abs(-55.5);
 --ROUND()
 SELECT product_name, round(product_price) from product;
 SELECT product_name, round(product_price,1) AS Rounded_price from product;
+
+-- TRUNCATE()                                      // same as ROUND() , does not round
+select TRUNCATE(product_price,2) FROM product;
+select truncate(product_price,0) from product;
+
