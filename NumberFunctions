@@ -1,0 +1,12 @@
+--MOD()   MOD(value, divisor)
+select product_id, product_name                              select product_id, product_name          // displays id , name of all odd ids'
+from product                                                 from product
+where MOD(product_id,2)=1;                                   where product_id % 2 <> 0;                        
+
+-- ABS()
+select abs(product_price) from product;
+select abs(-55.5);
+
+--ROUND()
+SELECT product_name, round(product_price) from product;
+SELECT product_name, round(product_price,1) AS Rounded_price from product;
