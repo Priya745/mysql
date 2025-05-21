@@ -42,3 +42,29 @@ on students.batchId=batch.batchId;
 
 -- cross join                                    -- for cartesian product between two tables
 select * from students cross join batch;
+
+
+SELECT * FROM studentdb.passenger;
+use studentdb;
+Select * from studentdb.flightdetails;
+
+insert into Passenger values 
+(1,'Arjuna',101),
+(2,'Bhima',102),
+(3,'Yudhishthira',103),
+(4,'Nakula',104),
+(5,'Sahadeva',105),
+(6,'Dronacharya',101);
+
+insert into flightdetails values 
+(101, 'FL101', 'Kerala'), 
+(102, 'FL102', 'Karnataka'), 
+(103, 'FL103', 'Tamil Nadu'), 
+(104, 'FL104', 'Andhra Pradesh'), 
+(105, 'FL105', 'Tamil Nadu'), 
+(106, 'FL106', 'Telangana');
+
+select * from passenger as p join flightdetails as fd
+on p.FlightID = fd.FlightID;
+
+select * from passenger as p natural join flightdetails as fd;
