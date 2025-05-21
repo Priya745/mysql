@@ -93,6 +93,8 @@ select *
 from employee
 where emp_salary%3=0;
 
+
+-- STRING FUNCTIONS
 //BETWEEN AND OPERATOR
 use company;
 select * from drives
@@ -164,3 +166,23 @@ select substr('Punit Rajkumar',-8,3);
 select instr(emp_name, 'a') from employee;
 SELECT instr(emp_name, 'aman') from employee;
 
+-- TRIM()
+select TRIM(LEADING FROM '   Kodnest');
+select trim(TRAILING from '   Kodnest   ');
+select trim(BOTH from '   kodnest  ');     or.. select trim('  kodnest   ');
+
+-- LPAD()
+select LPAD(emp_id,3,0) from employee;              //001     --> ADDS LEFT PADDING , 3 digits, padding with 0
+                                                      002
+                                                      003
+                                                      004
+select RPAD(emp_name,30,'*') from employee where emp_id=2;                 // Rina**************************
+select RPAD(120,6,0) ;                                            //120000
+
+-- LEFT()                                                         // same as substr()
+SELECT left(emp_name, 2) from employee where emp_id=1;                              //Am
+select right(emp_mame, 2) from employee where emp_id=1;                             //an
+
+
+--ASCII()                                                         //RETURNS ASCII VALUE OF THE FIRST CHARACTER
+select ascii('A');                                      //65
