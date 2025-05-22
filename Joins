@@ -68,3 +68,11 @@ select * from passenger as p join flightdetails as fd
 on p.FlightID = fd.FlightID;
 
 select * from passenger as p natural join flightdetails as fd;
+
+-- SELF JOIN
+SELECT * FROM studentdb.employees;
+
+select e1.emp_name as Employee_name, e2.emp_name as Manager_name
+from employees as e1 inner join employees as e2                            // BOTH SELF JOIN AND INNER JOIN
+on e1.manager_id = e2.id;
+
