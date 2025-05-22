@@ -14,3 +14,5 @@ SELECT emp_name, IFNULL(emp_salary,'Not available') as 'Status' from employee;
 -- NULLIF()
 select emp_name, nullif(emp_salary,1000) as 'status' from employee;
 
+--Timestampdiff(unit, start,end)
+
