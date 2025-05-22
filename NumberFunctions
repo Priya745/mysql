@@ -15,3 +15,28 @@ SELECT product_name, round(product_price,1) AS Rounded_price from product;
 select TRUNCATE(product_price,2) FROM product;
 select truncate(product_price,0) from product;
 
+-- POWER()  POW()
+select POWER(emp_salary,2) from employee;
+select POW(emp_salary,2) from employee;
+SELECT POW(3.14,2) as squred_pi;
+
+-- SQRT()
+select sqrt(emp_salary) from employee;
+
+--CEIL()
+select ceil(10.1);                  //11
+
+-- FLOOR()
+SELECT floor(7.5);                 //7
+
+NOW()	    Returns current date and time	SELECT NOW();	2025-05-22 13:15:30
+SYSDATE()
+LOCALTIME()
+CURDATE()	Returns current date	SELECT CURDATE();	2025-05-22
+CURDATE()
+CURTIME()	Returns current time	SELECT CURTIME();	13:15:30
+CURRENT_TIME()
+SYSDATE()	Returns time when function is executed	SELECT SYSDATE();	2025-05-22 13:15:30
+DATE()   Extract only date from date and time
+TIME()   Extract only time from date and time
+
