@@ -1,0 +1,16 @@
+-- IF()
+select emp_id, emp_name, 
+if(emp_salary > 1000, 'More', 'Less') 
+as Ans from employee;
+
+//1	Aman	Less
+  2	Rina	More
+  3	Sam	  More
+  4	Tony	More
+
+--IFNULL()
+SELECT emp_name, IFNULL(emp_salary,'Not available') as 'Status' from employee;
+
+-- NULLIF()
+select emp_name, nullif(emp_salary,1000) as 'status' from employee;
+
