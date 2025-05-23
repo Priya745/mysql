@@ -4,3 +4,10 @@ WHERE conditions
 GROUP BY column/columns
 HAVING  conditions on aggtegate_column/columns
 ORDER BY column/columns asc(default)/desc
+
+
+select product_id, sum(quantity_sold) as 'Quantity Sold', sum(unit_price*quantity_sold) as 'Total revenue', avg(unit_price) as 'Average Unit Price'
+from sales 
+group by product_id
+having sum(quantity_sold)>10
+order by 'Average Unit Price' desc;
