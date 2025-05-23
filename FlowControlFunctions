@@ -16,3 +16,23 @@ select emp_name, nullif(emp_salary,1000) as 'status' from employee;
 
 --Timestampdiff(unit, start,end)
 
+
+--GROUP BY CLAUSE                    //typically used with aggregate functions
+select batch, count(roll) as Count
+from student
+group by batch;
+
+
+--HAVING CLAUSE     
+select batch, count(roll) as Count
+from student
+group by batch
+HAVING count(roll)>2;                  // TO add conditions in aggregate functions
+
+
+//ORDER BY
+select batch, count(roll) as Count
+from student
+group by batch
+ORDER BY count(roll) ASC;              //TO arrange in asc or desc
+
