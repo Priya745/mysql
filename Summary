@@ -1,7 +1,7 @@
 SELECT column/columns/expression/expressions
 FROM table_name/ table_names/ views
 WHERE conditions
-GROUP BY column/columns
+GROUP BY column/columns                               // Group by and Having can interchange positions
 HAVING  conditions on aggtegate_column/columns
 ORDER BY column/columns asc(default)/desc
 
