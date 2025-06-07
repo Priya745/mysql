@@ -1,0 +1,21 @@
+alter table new
+add column batch varchar(30);
+
+alter table new
+rename column batch to studentBacth;
+
+alter table new
+drop column studentBatch;
+
+truncate table new;
+
+drop table new;
+
+update new
+set marks=89
+where marks=90;
+
+SET SQL_SAFE_UPDATES=0;
+
+DELETE FROM new
+where roll=6;
